@@ -1,0 +1,13 @@
+<div class='participants' *ngIf='testemonials.length > 0; else loading'>
+  <h4 class='participants__title'>{{'home.testimonials' | translate}}</h4>
+  <app-home-testemonial
+    *ngFor='let testemonial of testemonials; let i = index'
+    [rightImage]='i === 0 || i === 2'
+    [primary]='i === 0'
+    [testemonialInfo]='testemonial'
+  ></app-home-testemonial>
+</div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

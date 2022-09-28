@@ -1,0 +1,151 @@
+@import './src/assets/styles/variables/colors';
+
+.stamps-and-postcards {
+  &__dots {
+    position: absolute;
+
+    &_right {
+      right: 0;
+      top: 712px;
+      object-position: 110.04px 0;
+    }
+
+    &_left {
+      bottom: -33.47px;
+      left: 0;
+      object-position: -97px 0;
+    }
+
+    &_top-left {
+      top: -45px;
+      left: 0;
+      object-position: -102px 0;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 65px;
+    color: $white;
+    margin-bottom: -5px;
+
+    @media screen and (max-width: $md-tablet) {
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 15px;
+    }
+
+    &-keeper {
+      padding-top: 51px;
+      padding-bottom: 135px;
+
+      @media screen and (max-width: $md-tablet) {
+        padding-bottom: 51px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: $white;
+    margin-bottom: 33px;
+  }
+
+  &__article {
+    max-width: 91%;
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
+  }
+
+  &__stamp {
+    object-fit: contain;
+    object-position: center center;
+
+    &_2013 {
+      max-width: 517px;
+      width: 42.37%;
+
+      @media screen and (max-width: $md-tablet) {
+        width: 100%;
+      }
+    }
+
+    &_2018 {
+      width: 55.98%;
+
+      @media screen and (max-width: $md-tablet) {
+        width: 100%;
+      }
+    }
+
+    &-keeper {
+      width: 100%;
+      position: relative;
+      margin: 35px auto;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        gap: 12px;
+
+        @media screen and (max-width: $md-tablet) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  &__example {
+    width: calc(25% - 12.75px);
+    height: 214px;
+    object-fit: cover;
+    object-position: center center;
+    border: 1px solid #99969C;
+    transform: scale(1);
+    transition: transform .15s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: $lg-tablet-max-width) {
+      width: calc(50% - 8.5px);
+    }
+
+    @media screen and (max-width: $md-mobile) {
+      width: 100%;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 17px;
+      padding-top: 28px;
+      padding-bottom: 28px;
+      margin-bottom: 68px;
+      background: $primary-extralighter;
+
+      @media screen and (max-width: $lg-tablet-max-width) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+  &__photo {
+    &-keeper {
+      position: relative;
+      margin-bottom: 42px;
+    }
+  }
+}

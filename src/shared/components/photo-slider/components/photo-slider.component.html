@@ -1,0 +1,16 @@
+<div class='photo-slider'>
+  <ngx-slick-carousel class='photo-slider__main' #slider gallerize="gallery-1">
+    <img ngxSlickItem *ngFor='let original of originalImages; let i = index' [src]='original' [attr.imageSrc]='original' [attr.thumbSrc]='thumbImages ? thumbImages[i] : ""'>
+  </ngx-slick-carousel>
+  <ngx-slick-carousel *ngIf='originalImages && originalImages.length > 1' class='photo-slider__navigation' #sliderNavigation>
+    <img ngxSlickItem *ngFor='let thumb of (thumbImages && thumbImages.length > 0 ? thumbImages : originalImages); let i = index' (click)='sliderNavigation.slickGoTo(i)' [src]='thumb'>
+  </ngx-slick-carousel>
+  <div *ngIf='originalImages && originalImages.length > 1' class='photo-slider__arrows'>
+    <button class='photo-slider__arrow photo-slider__arrow_previous'>
+      <img src='../../../../assets/images/icons/arrow-left.svg' alt='Arrow'>
+    </button>
+    <button class='photo-slider__arrow photo-slider__arrow_next'>
+      <img src='../../../../assets/images/icons/arrow-right.svg' alt='Arrow'>
+    </button>
+  </div>
+</div>

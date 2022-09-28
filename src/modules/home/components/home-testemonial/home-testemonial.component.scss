@@ -1,0 +1,122 @@
+@import './src/assets/styles/variables/colors';
+
+.participant {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 500px;
+  padding: 52px 108px 44px 137px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  gap: 83px;
+
+  @media screen and (max-width: $lg-tablet-max-width) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: $sm-desktop) {
+    padding: 52px 36px 44px;
+  }
+
+  @media screen and (max-width: $md-mobile) {
+    padding: 24px 16px;
+    gap: 24px;
+
+    @media screen and (max-width: $lg-mobile) {
+      padding: 32px 16px;
+    }
+  }
+
+  &_expanded {
+    @media screen and (min-width: $lg-tablet-min-width) {
+      display: block;
+    }
+  }
+
+  &_primary {
+    background: $primary-extralighter;
+    border-radius: 0 0 0 100px;
+
+    @media screen and (max-width: $lg-mobile) {
+      border-radius: 0 0 0 60px;
+    }
+  }
+
+  &__position {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $primary;
+    margin-bottom: 0;
+  }
+
+  &__name {
+    margin-bottom: 22px;
+    font-weight: 700;
+  }
+
+  &__about {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $gray-7;
+  }
+
+  &__image {
+    max-width: 450px;
+    width: 100%;
+    height: 404px;
+    border-radius: 2px 2px 2px 100px;
+    object-fit: cover;
+    object-position: center;
+
+    @media screen and (min-width: $lg-tablet-min-width) {
+      float: left;
+      min-width: 450px;
+    }
+
+    @media screen and (max-width: $md-mobile) {
+      height: 280px;
+    }
+
+    .participant_expanded & {
+      @media screen and (min-width: $lg-tablet-min-width) {
+        margin-bottom: 32px;
+        margin-right: 83px;
+
+        &_right {
+          margin-left: 83px;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &_right {
+      @media screen and (min-width: $lg-tablet-min-width) {
+        order: 1;
+        float: right;
+      }
+    }
+  }
+
+  &__read-more {
+    color: $primary;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &__background {
+    &-dots {
+      position: absolute;
+      object-position: -69px;
+      top: -86px;
+      left: 0;
+      z-index: -1;
+      user-select: none;
+    }
+  }
+}

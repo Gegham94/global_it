@@ -1,0 +1,96 @@
+@import 'src/assets/styles/variables/colors';
+
+.news {
+  padding-top: 72px;
+  padding-bottom: 105px;
+  position: relative;
+
+  &__info {
+    display: block;
+
+    @media screen and (max-width: $md-tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    max-width: 455px;
+    width: 100%;
+    height: 389px;
+    border-radius: 2px 2px 2px 100px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center center;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 65px;
+
+    @media screen and (max-width: $md-tablet) {
+      margin-right: 0;
+    }
+  }
+
+  &__name {
+    color: $primary-dark;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 0;
+  }
+
+  &__position {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 6px;
+    color: $gray-7;
+    align-self: flex-start;
+    text-transform: capitalize;
+
+    a {
+      color: #0061FE;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+
+    & > ::ng-deep p {
+      color: $black;
+      line-height: 23px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    top: 596px;
+    right: 0;
+    object-position: 103.31px 0;
+
+    &_left {
+      top: initial;
+      bottom: -83.75px;
+      left: -110px;
+      object-position: -104px 0;
+    }
+
+    &_top-left {
+      top: 335px;
+      bottom: -83.75px;
+      left: 0;
+      object-position: -104px 0;
+    }
+  }
+
+  &__photo-archive {
+    margin-top: 44px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+}

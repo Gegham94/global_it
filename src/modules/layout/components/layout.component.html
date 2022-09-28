@@ -1,0 +1,9 @@
+<div class="main-block">
+  <app-header></app-header>
+  <app-navigation class='main-block__navigation' [class.main-block__navigation_fixed]='isNavigationFixed'></app-navigation>
+  <div class='main-block__content' [class.main-block__content_fixed]='isNavigationFixed'>
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+  <app-scroll-up-button *ngIf='isBowser'></app-scroll-up-button>
+</div>

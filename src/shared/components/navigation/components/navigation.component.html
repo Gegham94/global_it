@@ -1,0 +1,96 @@
+<div class="navigation container">
+  <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="about">
+    {{"navigation-links.about" | translate}}
+  </a>
+  <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="selection-and-awarding">
+    {{"navigation-links.selection-and-awarding" | translate}}
+  </a>
+  <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="committee">
+    {{"navigation-links.committee" | translate}}
+  </a>
+  <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="laureates">
+    {{"navigation-links.laureates" | translate}}
+  </a>
+  <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="stamps-and-postcards">
+    {{"navigation-links.stamps-and-postcards" | translate}}
+  </a>
+  <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="news">
+    {{"navigation-links.news" | translate}}
+  </a>
+  <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="partners">
+    {{"navigation-links.partners" | translate}}
+  </a>
+</div>
+
+<button class='navigation__mobile-toggler' (click)='setMobileMenuToggled(true)'>
+  <img src='./assets/images/icons/menu-primary.svg' alt='Menu Icon'>
+</button>
+
+<div class='navigation__background' (click)='setMobileMenuToggled(false)' [class.navigation__background_toggled]='isMobileMenuToggled'></div>
+
+<div class='navigation navigation_mobile' [class.navigation_mobile-toggled]='isMobileMenuToggled'>
+  <div class='navigation__content'>
+    <div class='navigation__logo-keeper'>
+      <a class='navigation__logo' [routerLink]='"/" + translate.currentLang'>Global IT Award</a>
+    </div>
+    <form class='navigation__search-keeper' (submit)='submitSearch($event)'>
+      <input type='text' class='navigation__search' [class.navigation__search_active]='!!searchText' [(ngModel)]='searchText' [ngModelOptions]="{standalone: true}" placeholder='Search...'>
+      <button class='navigation__search-icon-button'>
+        <img class='navigation__search-icon' (click)='submitSearch($event)' src='./assets/images/icons/search-mobile.svg' alt='Search'>
+      </button>
+    </form>
+    <div class='navigation__links'>
+      <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="about">
+        {{"navigation-links.about" | translate}}
+      </a>
+      <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="selection-and-awarding">
+        {{"navigation-links.selection-and-awarding" | translate}}
+      </a>
+      <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="committee">
+        {{"navigation-links.committee" | translate}}
+      </a>
+      <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="laureates">
+        {{"navigation-links.laureates" | translate}}
+      </a>
+      <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="stamps-and-postcards">
+        {{"navigation-links.stamps-and-postcards" | translate}}
+      </a>
+      <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="news">
+        {{"navigation-links.news" | translate}}
+      </a>
+      <a class="navigation__link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="navigation__link_active" routerLink="partners">
+        {{"navigation-links.partners" | translate}}
+      </a>
+    </div>
+    <div class='navigation__contact-keeper'>
+      <a class="navigation__contact navigation__phone" href="tel:+37491320190">
+        <img class="navigation__phone-icon" src="../../../../assets/images/icons/phone.svg" alt="Phone Number">
+        <span class="navigation__phone-number">
+          +37491320190
+        </span>
+      </a>
+      <a class="navigation__contact navigation__email" href="tel:+37491320190">
+        <img class="navigation__email-icon" src="../../../../assets/images/icons/email.svg" alt="Email">
+        <span class="navigation__email-address">
+          lusinet@globalitaward.am
+        </span>
+      </a>
+    </div>
+    <div class='navigation__social-keeper'>
+      <div class='navigation__language-keeper'>
+        <app-select [(ngModel)]="chosenLanguage" (ngModelChange)='setLanguage()' [optionList]="languageList"></app-select>
+      </div>
+      <div class='navigation__social-list'>
+        <a class="navigation__social" href="https://www.facebook.com/GlobalITAward" target="_blank">
+          <img src="../../../../assets/images/icons/social/facebook.svg" alt="Facebook">
+        </a>
+        <a class="navigation__social" href="https://twitter.com/GlobalITAward" target="_blank">
+          <img src="../../../../assets/images/icons/social/twitter.svg" alt="Twitter">
+        </a>
+      </div>
+    </div>
+    <button class='navigation__close-button' (click)='setMobileMenuToggled(false)'>
+      <img src='./assets/images/icons/close.svg' alt='Close icon'>
+    </button>
+  </div>
+</div>

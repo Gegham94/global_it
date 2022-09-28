@@ -1,0 +1,154 @@
+@import './src/assets/styles/variables/colors';
+
+.search {
+  margin-bottom: 24px;
+
+  &__title {
+    font-size: 32px;
+    line-height: 42px;
+    color: $primary-dark;
+
+    &-keeper {
+      margin-top: 34px;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 35px;
+    margin-bottom: 72px;
+    position: relative;
+
+    @media screen and (max-width: $lg-tablet-max-width) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media screen and (max-width: $lg-mobile) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 51, 0.08);
+    background: $white;
+    position: relative;
+
+    &:hover {
+      .search__read-more {
+        &-text {
+          font-weight: 600;
+          color: $primary;
+        }
+
+        &-line {
+          width: 8.7%;
+        }
+      }
+
+      .search__image {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform .15s ease-in-out;
+
+    &-keeper {
+      height: 258px;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  &__content {
+    padding: 19px 16px 31px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 258px);
+  }
+
+  &__name {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 28px;
+    max-height: 60px;
+    flex-grow: 1;
+    overflow: hidden;
+
+    & > ::ng-deep p {
+      display: inline;
+    }
+  }
+
+  &__read-more {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-text {
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: $primary-dark;
+      transition: color .15s ease-in-out, font-weight .15s ease-in-out;
+    }
+
+    &-line {
+      min-height: 1px;
+      width: 72%;
+      background: $primary;
+      transition: width .15s ease-in-out;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+
+    &_right {
+      top: 362px;
+      right: 0;
+      object-position: 69.8px 0;
+    }
+
+    &_left {
+      bottom: 41.2px;
+      object-position: -91px 0;
+    }
+  }
+
+  &__empty {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &-text {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

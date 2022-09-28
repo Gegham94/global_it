@@ -1,0 +1,40 @@
+<div class='news' *ngIf='news.length > 0 && !isLoading; else loading'>
+  <app-primary-block class='news__primary'>
+    <div class='container'>
+      <div class='news__primary-container'>
+        <h1 class='news__title'>{{'news.title' | translate}}</h1>
+        <h4 class='news__subtitle'>
+          {{'news.paragraph' | translate}}
+        </h4>
+      </div>
+    </div>
+  </app-primary-block>
+  <div
+    class='news__list container'
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="416"
+    (scrolled)='getNewNews()'
+  >
+    <img class='news__dots news__dots_right' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+    <img class='news__dots news__dots_left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+    <a class='news__item' *ngFor='let newsItem of news' [routerLink]='newsItem.slug'>
+      <div class='news__image-keeper'>
+        <img class='news__image' [src]='newsItem.photo_path' alt=''>
+        <span class='news__year'>{{newsItem.post_date | date : 'MMMM dd, yyyy' : '' : translate.currentLang }}</span>
+      </div>
+      <div class='news__content'>
+        <h4 class='news__name'>{{newsItem.title}}</h4>
+        <button class='news__read-more'>
+          <span class='news__read-more-text'>
+            {{'read-more' | translate}}
+          </span>
+          <span class='news__read-more-line'></span>
+        </button>
+      </div>
+    </a>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

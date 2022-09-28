@@ -1,0 +1,81 @@
+@import './src/assets/styles/variables/colors';
+
+.selection-and-awarding {
+  &__title {
+    margin-bottom: 18px;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 65px;
+    color: $white;
+
+    @media screen and (max-width: $md-tablet) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+
+    &-keeper {
+      padding-top: 95px;
+      padding-bottom: 164px;
+    }
+  }
+
+  &__subtitle {
+    color: $white;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 62%;
+
+    @media screen and (max-width: $md-mobile) {
+      max-width: none;
+    }
+  }
+
+  &__content {
+    margin-top: 40px;
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  &__article {
+    &:not(:last-child) {
+      margin-bottom: 38px;
+    }
+    &-title {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 39px;
+      color: $primary-dark;
+      margin-bottom: 25px;
+
+      @media screen and (max-width: 480px) {
+        font-size: 22px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    top: 375px;
+    right: 0;
+    object-position: 105.39px 0;
+
+    &_left {
+      top: -42px;
+      left: 0;
+      right: initial;
+      object-position: -104px 0;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<div class='committee' *ngIf='selectionPanelList.length > 0 && chairmanList.length > 0; else loading'>
+  <app-primary-block>
+    <div class='committee__title-keeper container'>
+      <h1 class='committee__title'>{{'committee.title' | translate}}</h1>
+      <h5 class='committee__subtitle'>{{'committee.subtitle' | translate}}</h5>
+      <article class='committee__article'>
+        {{'committee.article' | translate}}
+      </article>
+    </div>
+  </app-primary-block>
+  <div class='committee__content'>
+    <div class='committee__chairman container'>
+      <img class='committee__chairman-dots' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+      <div class='committee__list'>
+        <div class='committee__item'>
+          <div class='committee__image-keeper'>
+            <img [src]='chairmanList[0].photo_path' [alt]='chairmanList[0].name' class='committee__image'>
+          </div>
+          <div class='committee__info'>
+            <h4 class='committee__name'>{{chairmanList[0].name}}</h4>
+            <h6 class='committee__position'>{{chairmanList[0].position}}</h6>
+          </div>
+        </div>
+      </div>
+      <div class='committee__list'>
+        <div class='committee__item' *ngFor='let committee of chairmanList.slice(1)'>
+          <div class='committee__image-keeper'>
+            <img [src]='committee.photo_path' [alt]='committee.name' class='committee__image'>
+          </div>
+          <div class='committee__info'>
+            <h4 class='committee__name'>{{committee.name}}</h4>
+            <h6 class='committee__position'>{{committee.position}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='committee__selection-panel container'>
+      <h2 class='committee__section-title'>{{'committee.selection-panel' | translate}}</h2>
+      <img class='committee__selection-panel-dots committee__selection-panel-dots_right' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+      <img class='committee__selection-panel-dots committee__selection-panel-dots_left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+      <div class='committee__list'>
+        <div class='committee__item' *ngFor='let committee of selectionPanelList'>
+          <div class='committee__image-keeper'>
+            <img [src]='committee.photo_path' [alt]='committee.name' class='committee__image'>
+          </div>
+          <div class='committee__info'>
+            <h4 class='committee__name'>{{committee.name}}</h4>
+            <h6 class='committee__position'>{{committee.position}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

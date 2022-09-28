@@ -1,0 +1,122 @@
+@import './src/assets/styles/variables/colors';
+
+:host {
+  justify-self: flex-end;
+}
+
+.footer {
+  background: #090660;
+  padding-top: 79px;
+  padding-bottom: 88.5px;
+  position: relative;
+
+  @media screen and (max-width: $lg-mobile) {
+    padding-bottom: 109.5px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+
+    @media screen and (max-width: $sm-desktop) {
+      justify-content: space-between;
+      gap: 5px;
+    }
+
+    @media screen and (max-width: $lg-tablet-max-width) {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+      color: $white;
+      margin-bottom: 14px;
+    }
+
+    &-position {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: $white;
+    }
+
+    &-info {
+      color: $white;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      white-space: nowrap;
+
+      img {
+        width: 19px;
+        height: 19px;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $white;
+
+        @media screen and (max-width: $lg-mobile) {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+
+  &__subfooter {
+    width: 100%;
+    height: 54px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    background: $primary-extralight;
+    color: $black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: $lg-mobile) {
+      flex-direction: column;
+      height: 70px;
+    }
+  }
+
+  &__developed {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $white;
+  }
+
+  &__logo {
+    margin-bottom: 8px;
+
+    &-keeper {
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

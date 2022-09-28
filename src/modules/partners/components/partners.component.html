@@ -1,0 +1,19 @@
+<div class='partners container' *ngIf='partners.length > 0; else loading'>
+  <h1 class='partners__title'>
+    {{'partners.title' | translate}}
+  </h1>
+  <h5 class='partners__subtitle'>
+    {{'partners.subtitle' | translate}}
+  </h5>
+  <div class='partners__list'>
+    <a *ngFor='let partner of partners' [href]='partner.website' class='partners__item' target='_blank'>
+      <img class='partners__item-image' [src]='partner.photo_path' [alt]='partner.title'>
+      <h4 class='partners__item-title'>{{partner.title}}</h4>
+    </a>
+  </div>
+  <img class='partners__dots partners__dots_left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+  <img class='partners__dots partners__dots_right' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

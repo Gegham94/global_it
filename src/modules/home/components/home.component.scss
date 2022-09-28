@@ -1,0 +1,70 @@
+@import '../../../assets/styles/variables/colors';
+
+.home {
+  &__slider-keeper {
+    margin-bottom: 46px;
+    max-width: 1440px;
+
+    ::ng-deep .primary-block {
+      height: auto;
+    }
+  }
+
+  &__main {
+    &-picture {
+      max-width: 366.41px;
+      width: 100%;
+      height: 345px;
+      border-radius: 2px 2px 2px 100px;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    &-content {
+      @media screen and (min-width: $lg-tablet-min-width) {
+        padding-right: 42px;
+      }
+    }
+
+    &-name {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      color: $primary;
+      margin-bottom: 7px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+      color: $primary-dark;
+      margin-bottom: 53px;
+    }
+
+    &-citation {
+      position: relative;
+      padding-top: 108px;
+      padding-bottom: 78px;
+      background: $primary-extralighter;
+      display: flex;
+      align-items: center;
+      gap: 87px;
+
+      @media screen and (max-width: $lg-tablet-max-width) {
+        padding-top: 54px;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      &-dots {
+        position: absolute;
+        right: 0;
+        bottom: -32.28px;
+        width: 212px;
+        height: 208px;
+        object-position: 104.7px 0;
+      }
+    }
+  }
+}

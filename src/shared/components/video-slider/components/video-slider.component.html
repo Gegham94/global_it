@@ -1,0 +1,16 @@
+<div class='video-slider'>
+  <ngx-slick-carousel class='video-slider__main' #slider>
+    <iframe *ngFor='let ytVideoId of videoIds' ngxSlickItem [src]="'https://www.youtube-nocookie.com/embed/' + ytVideoId | safe: 'resourceUrl'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ngx-slick-carousel>
+  <ngx-slick-carousel *ngIf='videoIds.length > 1' class='video-slider__navigation' #sliderNavigation>
+    <img ngxSlickItem *ngFor='let ytVideoId of videoIds; let i = index' (click)='navigationSlider.slickGoTo(i)' [src]="'https://img.youtube.com/vi/' + ytVideoId + '/0.jpg' | safe : 'resourceUrl'" alt='Video Thumbnail'>
+  </ngx-slick-carousel>
+  <div *ngIf='videoIds.length > 1' class='video-slider__arrows'>
+    <button class='video-slider__arrow video-slider__arrow_previous'>
+      <img src='../../../../assets/images/icons/arrow-left.svg' alt='Arrow'>
+    </button>
+    <button class='video-slider__arrow video-slider__arrow_next'>
+      <img src='../../../../assets/images/icons/arrow-right.svg' alt='Arrow'>
+    </button>
+  </div>
+</div>

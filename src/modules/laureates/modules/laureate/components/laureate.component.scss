@@ -1,0 +1,106 @@
+@import 'src/assets/styles/variables/colors';
+
+.laureate {
+  padding-top: 72px;
+  padding-bottom: 105px;
+  position: relative;
+
+  &__section-title {
+    font-weight: 700;
+    margin-bottom: 21px;
+  }
+
+  &__info {
+    display: block;
+    margin-bottom: 44px;
+
+    @media screen and (max-width: $md-tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    max-width: 455px;
+    width: 100%;
+    height: 389px;
+    border-radius: 2px 2px 2px 100px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center center;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 65px;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: $md-tablet) {
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__name {
+    color: $primary-dark;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 0;
+
+    @media screen and (max-width: $md-tablet) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__position {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 23px;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+
+    & > ::ng-deep p {
+      color: $black;
+      line-height: 23px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    top: 596px;
+    right: 0;
+    object-position: 103.31px 0;
+
+    &_left {
+      top: initial;
+      bottom: 655px;
+      left: 0;
+      object-position: -104px 0;
+    }
+
+    &_top-left {
+      top: 335px;
+      bottom: -83.75px;
+      left: 0;
+      object-position: -104px 0;
+
+      &.laureate__dots_empty {
+        top: 50px;
+      }
+    }
+  }
+
+  &__photo-archive {
+    margin-top: 44px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+}

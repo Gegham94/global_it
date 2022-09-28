@@ -1,0 +1,43 @@
+<header class="header">
+  <div class="container header__content" [class.header__content_search]="isSearchEnabled">
+    <a class="header__title" [routerLink]='"/" + translate.currentLang'>
+      Global IT Award
+    </a>
+    <div class="header__contact-keeper">
+      <a class="header__contact header__phone" href="tel:+37491320190">
+        <img class="header__phone-icon" src="../../../../assets/images/icons/phone.svg" alt="Phone Number">
+        <span class="header__phone-number">
+          +37491320190
+        </span>
+      </a>
+      <a class="header__contact header__email" href="tel:+37491320190">
+        <img class="header__email-icon" src="../../../../assets/images/icons/email.svg" alt="Email">
+        <span class="header__email-address">
+          lusinet@globalitaward.am
+        </span>
+      </a>
+    </div>
+    <div class="header__social-keeper">
+      <span class="header__social-title">
+        {{"header.follow-us" | translate}}:
+      </span>
+      <a class="header__social" href="https://www.facebook.com/GlobalITAward" target="_blank">
+        <img src="../../../../assets/images/icons/social/facebook.svg" alt="Facebook">
+      </a>
+      <a class="header__social" href="https://twitter.com/GlobalITAward" target="_blank">
+        <img src="../../../../assets/images/icons/social/twitter.svg" alt="Twitter">
+      </a>
+    </div>
+    <div class="header__search" appClickOutside (clickOutside)="setSearchMode(false)">
+      <div class="header__search-block" [@searchToggle]="isSearchEnabled ? 'opened' : 'closed'">
+        <input class="header__search-input" [(ngModel)]="searchText" (keydown.enter)="submitSearch()" type="text">
+      </div>
+      <button class="header__search-button" (click)="isSearchEnabled ? submitSearch() : setSearchMode(true)">
+        <img src="../../../../assets/images/icons/search.svg" alt="Search">
+      </button>
+    </div>
+    <div class="header__language">
+      <app-select [(ngModel)]="chosenLanguage" (ngModelChange)='setLanguage()' [optionList]="languageList"></app-select>
+    </div>
+  </div>
+</header>

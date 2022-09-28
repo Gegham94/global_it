@@ -1,0 +1,123 @@
+{
+  "navigation-links": {
+    "about": "About",
+    "committee": "Committee",
+    "selection-and-awarding": "Selection and Awarding",
+    "news": "News",
+    "partners": "Partners",
+    "stamps-and-postcards": "Stamps and Postcards",
+    "laureates": "Laureates"
+  },
+  "header": {
+    "follow-us": "Follow Us"
+  },
+  "home": {
+    "title": "Home",
+    "minister-name": "Nikol Pashinyan Prime Minister of the Republic of Armenia",
+    "minister-title": "Message from the Prime Minister of the Republic of Armenia",
+    "minister-text": "To us, new technologies are a historic opportunity to accomplish what we want to accomplish in Armenia , that is, an economic revolution. This is also an opportunity for those who want to make a step for the progress of human kind.\nWith this award, we also want to show our young people what kind of power lies within each individual to change the world, to make it better, and that education is the only sure way to discover that power.",
+    "testimonials": "Testimonials"
+  },
+  "laureates": {
+    "head-title": "Laureates",
+    "title": "Global IT Award Laureates",
+    "subtitle": "State Award of Republic of Armenia for Global Contribution to Humanity through IT",
+    "article": {
+      "paragraph-1": "The Global IT Award annually honors an individual who has made extraordinary contributions to humanity through advancing the world of IT. The award highlights Armenia on the world IT map as a growing high-tech destination",
+      "paragraph-2": "Inaugurated in 2009, the Global IT Award is granted on an annual basis to an individual whose internationally acclaimed contributions to IT have resulted in near-revolutionary or revolutionary developments that have positively impacted or hold the potential to positively impact the humanity. The contributions may be in the technological, educational, organizational, or financial areas.",
+      "paragraph-3": "To date Global IT Award went to nine laureates."
+    }
+  },
+  "laureate": {
+    "photoarchive": "Photoarchive",
+    "videoarchive": "Videoarchive"
+  },
+  "news": {
+    "head-title": "News",
+    "title": "LATEST NEWS",
+    "paragraph": "State Award of Republic of Armenia for Global Contribution to Humanity through IT",
+    "source": "Source"
+  },
+  "about": {
+    "head-title": "About",
+    "title": "About Global IT Award",
+    "subtitle": "State Award of Republic of Armenia for Global Contribution to Humanity through IT",
+    "content": {
+      "paragraph-1": "On July 6th, 2009, President of the Republic of Armenia Serzh Sargsyan issued a Decree establishing a Global Award of the President of the Republic of Armenia for Outstanding Contribution to Humanity through IT (Global IT Award).",
+      "paragraph-2": "The Global IT Award annually honors an individual who has made extraordinary contributions to humanity through advancing the world of IT. The award highlights Armenia on the world IT map as a growing high-tech destination.",
+      "paragraph-3": "Inaugurated in 2009, the Global IT Award is granted on an annual basis to an individual whose internationally acclaimed contributions to IT have resulted in near-revolutionary or revolutionary developments that have positively impacted or hold the potential to positively impact the humanity. The contributions may be in the technological, educational, organizational, or financial areas.",
+      "paragraph-4": "In 2018 Global IT Award became State Award of Republic of Armenia for Global Contribution to Humanity through IT.",
+      "paragraph-5": "The Award consists of golden medal, diploma and trophy evoking High Technologies.",
+      "paragraph-6": "The medal for the Laureate of the State Award of the Republic of Armenia represents a winged lion authored by Karen Aghamyan, President of the Artists' Union of Armenia redesigned by Erebuni's frescoes representing the power and the wisdom of the Armenian people.",
+      "paragraph-7": "The lion rests on the modern globe and its network of rings reflects rapidly growing Information Technologies.",
+      "paragraph-8": "The trophy is entirely made of optical glass decorated with jewelry made of Armenian gemstones.",
+      "paragraph-9": "The Awarding Program is implemented by the Award Committee and the international Selection Panel appointed by the Prime Minister of the Republic of Armenia."
+    }
+  },
+  "selection-and-awarding": {
+    "head-title": "Selection and Awarding",
+    "title": "Selection and Awarding",
+    "subtitle": "State Award of Republic of Armenia for Global Contribution to Humanity through IT",
+    "content": {
+      "article-1": {
+        "title": "Invitations for Nominations",
+        "paragraph-1": "Candidates eligible for the Global IT Award are those nominated by qualified persons who have received an invitation from the Award Committee. Self nominations are not accepted.",
+        "paragraph-2": "The Committee extends invitations to submit nominations to a limited international group of IT professionals, industry leaders, scientists and educators, preselected by the Board based on advice of the Committee members, Co-Chairmen and Advisors of the Global IT Award Committee.",
+        "paragraph-3": "Completed nomination forms must reach the Award Committee according to the previously determined schedule. The Committee screens the nominations and with assistance and recommendations from Co-Chairmen and Advisors selects the preliminary candidates. The short-listed nominations are forwarded to the Selection Panel for review. The Committee may decide to verify the candidates’ availability before sending the nominations to the Panel."
+      },
+      "article-2": {
+        "title": "Laureate Selection",
+        "paragraph-1": "The Selection Panel votes on a date determined by the Award Committee to select the Global IT Laureate through a majority vote. At the discretion of the Committee, voting is arranged in person and/or by e-mail. The decision is final and without appeal. The Laureate is then informed by the Award Committee and his/her availability for the awarding ceremony is verified."
+      },
+      "article-3": {
+        "title": "Awarding Ceremony and Accompanying Events",
+        "paragraph-1": "The Laureate receives his/her award from the hands of the Prime Minister of the Republic of Armenia during a special ceremony held in Yerevan, Armenia on a pre-agreed date. The Laureate further enjoys a three day program which includes an introduction to the country and its ICT sector, presentations from the IT academic and business communities, and extensive international mass media coverage. All travel expenses are covered by the organizers."
+      }
+    }
+  },
+  "committee": {
+    "head-title": "Committee",
+    "title": "GIT Award Committee",
+    "subtitle": "State Award of Republic of Armenia for Global Contribution to Humanity through IT",
+    "article": "The Committee sends invitations for nominations, receives the nominations, recommends nominees for final selection by the Selection Panel, and arranges necessary logistics.",
+    "chairman": "Chairman",
+    "selection-panel": "Selection Panel"
+  },
+  "partners": {
+    "head-title": "Partners",
+    "title": "Partners",
+    "subtitle": "State Award of Republic of Armenia for Global Contribution to Humanity through IT"
+  },
+  "stamps-and-postcards": {
+    "head-title": "Stamps and Postcards",
+    "title": "Stamps and Postcards",
+    "subtitle": "State Award of Republic of Armenia for Global Contribution to Humanity through IT",
+    "article": {
+      "paragraph-1": "On November 15, 2013, 2 stamps and a postcard with a stamp dedicated to the “State Award of Republic of Armenia for Global Contribution to Humanity through IT” theme were issued.",
+      "paragraph-2": "The stamps depict the commemorative golden medal and the memorial souvenir presented to the awardees.",
+      "paragraph-3": "Once a three year, along with the two stamps, a postcard issues with the portraits of the three previous awardees."
+    }
+  },
+  "footer": {
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website",
+    "contacts": {
+      "lusine-tangyan": {
+        "name": "Lusine Tangyan",
+        "position": "Executive Secretary of Executive Board"
+      },
+      "hovik-musayelyan": {
+        "name": "Hovik Musayelyan",
+        "position": "Committee coordinator"
+      }
+    }
+  },
+  "read-more": "Read More",
+  "hide": "Hide",
+  "errors": {
+    "search-length": "You need to write at least 3 characters",
+    "occurred": "An Error Occurred.",
+    "not-found": "Page not found."
+  }
+}

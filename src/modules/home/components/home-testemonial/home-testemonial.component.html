@@ -1,0 +1,10 @@
+<div class='participant'  [class.participant_expanded]='isExpanded' [class.participant_primary]='primary'>
+  <img class='participant__image' [class.participant__image_right]='rightImage' [src]='testemonialInfo.photo_path' alt='Kaspersky'>
+  <div class='participant__info'>
+    <h6 class='participant__position'>{{testemonialInfo.position}}</h6>
+    <h4 class='participant__name'>{{testemonialInfo.title}}</h4>
+    <article class='participant__about'>
+      {{aboutText}} <span *ngIf='showExpanded' class='participant__read-more' (click)='setExpanded(!isExpanded)'>{{isExpanded ? ('hide' | translate) : ('read-more' | translate)}}</span>
+    </article>
+  </div>
+</div>

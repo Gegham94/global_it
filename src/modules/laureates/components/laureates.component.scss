@@ -1,0 +1,209 @@
+@import './src/assets/styles/variables/colors';
+
+.laureates {
+  &__primary {
+    display: block;
+    margin-bottom: 43px;
+
+    &-container {
+      padding-top: 71px;
+      padding-bottom: 69px;
+      max-width: 91%;
+    }
+  }
+
+  &__title {
+    font-size: 42px;
+    line-height: 65px;
+    color: $white;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    @media screen and (max-width: $md-tablet) {
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: $white;
+    margin-bottom: 39px;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 35px;
+    margin-bottom: 84px;
+    position: relative;
+
+    @media screen and (max-width: $lg-tablet-max-width) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media screen and (max-width: $lg-mobile) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &:nth-child(3n) {
+      .laureates__image-keeper {
+        border-radius: 0 0 0 60px;
+      }
+
+      .laureates__year {
+        padding-left: 61px;
+      }
+    }
+
+    &:nth-child(3n + 1) {
+      .laureates__image-keeper {
+        border-radius: 0 0 60px 0;
+      }
+    }
+
+    &:nth-child(3n + 2) {
+      .laureates__image-keeper {
+        border-radius: 60px 0 0 0;
+      }
+    }
+
+    &:hover {
+      .laureates__read-more {
+        &-text {
+          font-weight: 600;
+          color: $primary;
+        }
+
+        &-line {
+          width: 8.7%;
+        }
+      }
+
+      .laureates__image {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform .15s ease-in-out;
+
+    &-keeper {
+      height: 263.25px;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  &__year {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 14px 24px 16px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12%, #3E3E3E 100%);
+    color: $white;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__content {
+    padding: 15px 13px 11px 0;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 263.25px);
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 11px;
+  }
+
+  &__position {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 11px;
+    flex-grow: 1;
+  }
+
+  &__about {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 26px;
+    color: $gray-7;
+    overflow: hidden;
+    margin-bottom: 12px;
+    max-height: 78px;
+
+    & > ::ng-deep p {
+      display: inline;
+    }
+  }
+
+  &__read-more {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-text {
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: $primary-dark;
+      transition: color .15s ease-in-out, font-weight .15s ease-in-out;
+    }
+
+    &-line {
+      min-height: 1px;
+      width: 72%;
+      background: $primary;
+      transition: width .15s ease-in-out;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+
+    &_right {
+      top: 1474px;
+      right: 0;
+      object-position: 103.4px 0;
+    }
+
+    &_left {
+      top: -51px;
+      object-position: -104px 0;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "src/assets/styles/variables/colors";
+
+.main-block {
+  width: 100%;
+  background-image: linear-gradient(180deg, #F5F2FF 0%, #FFFFFF 53.14%, #FFFFFF 100%);
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  &::ng-deep &__navigation {
+    &_fixed {
+      @media screen and (min-width: $lg-tablet-min-width) {
+        position: fixed;
+        top: -6px;
+        left: 0;
+        right: 0;
+        z-index: 4;
+      }
+    }
+  }
+
+  &__content {
+    min-height: calc(100vh - 469px);
+
+    &_fixed {
+      @media screen and (min-width: $lg-tablet-min-width) {
+        margin-top: 74px;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<div class="news container" *ngIf='newsList.length > 0; else loading'>
+  <h2 class="news__title">{{'navigation-links.news' | translate}}</h2>
+  <ngx-slick-carousel
+    class="news__slider"
+    #slider
+    [config]='carouselOptions'
+  >
+    <a ngxSlickItem class="news__card" *ngFor='let news of newsList' [routerLink]='"/" + translate.currentLang + "/news/" + news.slug'>
+      <div class="news__card-image-keeper">
+        <img class="news__card-image" [src]="news.photo_path" [alt]="news.title">
+      </div>
+      <div class="news__card-info">
+        <div class='news__card-date-keeper'>
+          <img src='./assets/images/icons/calendar-primary.svg' alt='Calendar'>
+          <span class='news__card-date'>
+            {{news.post_date | date : 'MMMM dd, yyyy' : '' : translate.currentLang}}
+          </span>
+        </div>
+        <article class='news__card-description'>
+          {{news.title}}
+        </article>
+        <hr class='news__card-divider'>
+        <button class='news__card-button'>
+          <span>
+            {{'read-more' | translate}}
+          </span>
+        </button>
+      </div>
+    </a>
+  </ngx-slick-carousel>
+  <div class="news__slider-arrows">
+    <button class="news__slider-arrow news__slider-arrow_back">
+      <img src="../../../../assets/images/icons/chevron-left.svg" alt="Back">
+    </button>
+    <button class="news__slider-arrow news__slider-arrow_next">
+      <img src="../../../../assets/images/icons/chevron-right.svg" alt="Back">
+    </button>
+  </div>
+  <div class="news__slider-arrows news__slider-arrows_mobile">
+    <button class="news__slider-arrow news__slider-arrow_back">
+      <img src="../../../../assets/images/icons/arrow-left.svg" alt="Back">
+    </button>
+    <button class="news__slider-arrow news__slider-arrow_next">
+      <img src="../../../../assets/images/icons/arrow-right.svg" alt="Back">
+    </button>
+  </div>
+  <img class='news__dots' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+</div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

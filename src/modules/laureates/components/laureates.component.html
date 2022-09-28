@@ -1,0 +1,49 @@
+<div class='laureates' *ngIf='laureates.length > 0 && !isLoading; else loading'>
+  <app-primary-block class='laureates__primary'>
+    <div class='container'>
+      <div class='laureates__primary-container'>
+        <h1 class='laureates__title'>{{'laureates.title' | translate}}</h1>
+        <h5 class='laureates__subtitle'>{{'laureates.subtitle' | translate}}</h5>
+        <article class='laureates__description'>
+          {{'laureates.article.paragraph-1' | translate}}
+          <br>
+          {{'laureates.article.paragraph-2' | translate}}
+          <br>
+          {{'laureates.article.paragraph-3' | translate}}
+        </article>
+      </div>
+    </div>
+  </app-primary-block>
+  <div
+    class='laureates__list container'
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="416"
+    (scrolled)='getNewLaureates()'
+  >
+    <img class='laureates__dots laureates__dots_right' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+    <img class='laureates__dots laureates__dots_left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+    <a class='laureates__item' *ngFor='let laureate of laureates' [routerLink]='laureate.slug'>
+      <div class='laureates__image-keeper'>
+        <img class='laureates__image' [src]='laureate.photo_path' alt=''>
+        <span class='laureates__year'>
+          {{laureate.year}}
+        </span>
+      </div>
+      <div class='laureates__content'>
+        <h4 class='laureates__name'>{{laureate.name}}</h4>
+        <h5 class='laureates__position'>{{laureate.position}}</h5>
+        <article class='laureates__about' [innerHTML]='laureate.description'></article>
+        <button class='laureates__read-more'>
+          <span class='laureates__read-more-text'>
+            {{'read-more' | translate}}
+          </span>
+          <span class='laureates__read-more-line'></span>
+        </button>
+      </div>
+    </a>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

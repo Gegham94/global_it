@@ -1,0 +1,274 @@
+@import 'src/assets/styles/variables/colors';
+
+.news {
+  position: relative;
+  padding-top: 51px;
+  padding-bottom: 26px;
+  margin-bottom: 54px;
+  overflow: visible;
+
+  &__title {
+    margin-bottom: 55px;
+    text-align: center;
+  }
+
+  &__slider {
+    width: calc(100% + 37px);
+    margin: 0 -18.5px;
+    padding-left: 18.5px;
+    position: relative;
+
+    @media screen and (max-width: $lg-tablet-max-width) {
+      width: calc(100% + 32px);
+      margin: 0 -16px;
+      padding-left: 0;
+    }
+
+    &-arrows {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 9px;
+
+      &_mobile {
+        display: none;
+      }
+
+      @media screen and (max-width: $lg-tablet-max-width) {
+        display: none;
+
+        &_mobile {
+          display: flex;
+        }
+      }
+    }
+
+    &-arrow {
+      position: absolute;
+      top: calc(50% + 52px);
+      transform: translateY(-50%);
+      height: 32px;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+
+      &_next {
+        right: 60px;
+      }
+
+      &_back {
+        left: 70px;
+      }
+
+      &.slick-disabled {
+        visibility: hidden;
+      }
+
+      @media screen and (max-width: $lg-tablet-max-width) {
+        position: static;
+        width: 42px;
+        height: 42px;
+        background: $primary;
+        transition: opacity .15s ease-in-out, background .15s ease-in-out;
+        transform: none;
+
+        &:not(.slick-disabled):hover {
+          background: $secondary;
+        }
+
+        &:not(.slick-disabled):active {
+          background: $primary-dark;
+        }
+
+        &.slick-disabled {
+          opacity: .4;
+          cursor: default;
+          pointer-events: none;
+          visibility: visible;
+        }
+      }
+    }
+
+    ::ng-deep {
+      .slick-list {
+        @media screen and (min-width: $lg-tablet-min-width) {
+          height: 451px;
+        }
+        @media screen and (max-width: $lg-tablet-max-width) {
+          height: 536px;
+        }
+        @media screen and (max-width: $lg-mobile) {
+          height: 550px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: $white;
+    margin: 0 18.5px;
+    width: 586px;
+    height: 431px;
+    cursor: pointer;
+
+    @media screen and (max-width: $lg-tablet-max-width) {
+      height: 480px;
+    }
+
+    @media screen and (max-width: $md-tablet) {
+      width: 80vw;
+      height: 530px;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      user-select: none;
+      transform: scale(1);
+      transition: transform .15s ease-in-out;
+
+      &-keeper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 60px 0 0 0;
+      }
+    }
+
+    &-info {
+      position: absolute;
+      bottom: -1px;
+      left: -1px;
+      right: -1px;
+      width: calc(100% + 2px);
+      height: 174px;
+      padding: 15px 17px 17px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px 0 0 0;
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      transition: height .15s ease-in-out;
+
+      @media screen and (max-width: $lg-tablet-max-width) {
+        height: 210px;
+      }
+
+      @media screen and (max-width: $lg-mobile) {
+        height: 180px;
+      }
+    }
+
+    &-date {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: $primary-dark;
+      text-transform: capitalize;
+
+      &-keeper {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        margin-bottom: 10px;
+        padding-left: 9px;
+      }
+    }
+
+    &-description {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      color: $gray-7;
+      padding-left: 13.56px;
+      padding-right: 17.55px;
+      flex-grow: 1;
+      display: block;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      max-height: 66px;
+      margin-bottom: auto;
+
+      & > ::ng-deep p {
+        display: inline;
+      }
+    }
+
+    &-divider {
+      border: none;
+      width: 100%;
+      min-height: 1px;
+      background: $gray-5;
+      opacity: .4;
+      margin-top: 9px;
+      margin-bottom: 13px;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      margin-left: auto;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 45.73%;
+        height: 1px;
+        background: $primary;
+        transition: width .2s ease-in-out;
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $primary-dark;
+        transition: font-weight .15s ease-in-out, color .15s ease-in-out;
+      }
+    }
+
+    &:hover,
+    &:active {
+      .news__card-image {
+        transform: scale(1.1);
+        object-position: center;
+      }
+
+      .news__card-info {
+        height: 185px;
+      }
+
+      .news__card-button {
+        span {
+          font-weight: 600;
+          color: $primary;
+        }
+      }
+
+      .news__card-button {
+        &::after {
+          width: 5.62%;
+        }
+      }
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    top: -71px;
+    right: 0;
+    object-position: 100.34px 0;
+  }
+}

@@ -1,0 +1,41 @@
+<div class='search' *ngIf='!isLoading; else loading'>
+  <div class='search__title-keeper container'>
+    <h1 class='search__title'>Search results</h1>
+    <h4 class='search__subtitle'>Searched keyword: "{{searchQuery}}"</h4>
+  </div>
+  <div
+    class='search__list container'
+    *ngIf='resultList.length > 0; else emptyResult'
+  >
+    <img class='search__dots search__dots_right' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+    <img class='search__dots search__dots_left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+    <div
+      class='search__item'
+      *ngFor='let result of resultList'
+      [routerLink]='"/" + translate.currentLang + "/" + (result.type === SearchType.Laureate ? "laureates" : "news") + "/" + result.slug'
+    >
+      <div class='search__image-keeper'>
+        <img class='search__image' [src]='result.photo_path' alt=''>
+      </div>
+      <div class='search__content'>
+        <h4 class='search__name'>{{result.title}}</h4>
+        <button class='search__read-more'>
+          <span class='search__read-more-text'>
+            {{'read-more' | translate}}
+          </span>
+          <span class='search__read-more-line'></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
+<ng-template #emptyResult>
+  <div class='search__empty'>
+    <span class='search__empty-text'>
+      Nothing found!
+    </span>
+  </div>
+</ng-template>

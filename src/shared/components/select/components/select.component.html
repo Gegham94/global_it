@@ -1,0 +1,24 @@
+<div class="select" appClickOutside (clickOutside)="setOptionListState('closed')">
+  <button #toggle class="select__toggler" [class.select__toggler_toggled]="optionListState === 'opened'" (click)="setOptionListState('opened')">
+    {{selectedOption ? selectedOption : 'Choose one option'}}
+    <svg class="select__toggler-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.9955 9.24305L11.9978 5.01613L2.00684 5L6.9955 9.24305Z" fill="#000033"/>
+    </svg>
+  </button>
+  <div
+    class='select__option-list'
+    [class.select__option-list_bottom]="verticalPosition() === 'bottom'"
+    [class.select__option-list_top]="verticalPosition() === 'top'"
+    [class.select__option-list_toggled]="optionListState === 'opened'"
+    [@selectToggle]="optionListState"
+  >
+    <button
+      *ngFor="let option of optionList"
+      class="select__option"
+      [class.select__option_active]="value === option.value"
+      (click)="optionSelected(option.value)"
+    >
+      {{option.displayName}}
+    </button>
+  </div>
+</div>

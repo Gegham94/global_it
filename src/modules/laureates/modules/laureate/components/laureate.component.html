@@ -1,0 +1,36 @@
+<div class='laureate container' *ngIf='laureate && !isLoading; else loading'>
+  <div class='laureate__info'>
+    <img class='laureate__image' [src]='laureate.main_image' [alt]='laureate.name'>
+    <h2 class='laureate__name'>{{laureate.name}}</h2>
+    <h5 class='laureate__position'>{{laureate.position}}</h5>
+    <article class='laureate__description' [innerHTML]='laureate.description'></article>
+  </div>
+  <img class='laureate__dots' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+  <img
+    class='laureate__dots laureate__dots_top-left'
+    [class.laureate__dots_empty]='isAnySliderEmpty'
+    src='./assets/images/background-elements/dots.svg'
+    alt='Dots'
+  >
+  <img class='laureate__dots laureate__dots_left' *ngIf='!isAnySliderEmpty' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+  <div class='laureate__photo-archive' *ngIf='laureate.gallery_paths.originals && laureate.gallery_paths.originals.length > 0'>
+    <h4 class='laureate__section-title'>
+      {{'laureate.photoarchive' | translate}}
+    </h4>
+    <app-photo-slider
+      [originalImages]='laureate.gallery_paths.originals'
+      [thumbImages]='laureate.gallery_paths.thumbs'
+    ></app-photo-slider>
+  </div>
+  <div class='laureate__video-archive' *ngIf='laureate.video_paths && laureate.video_paths.length > 0'>
+    <h4 class='laureate__section-title'>
+      {{'laureate.videoarchive' | translate}}
+    </h4>
+    <app-video-slider
+      [videoIds]='laureate.video_paths'
+    ></app-video-slider>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

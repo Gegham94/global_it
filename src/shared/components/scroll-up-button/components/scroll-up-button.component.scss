@@ -1,0 +1,28 @@
+@import './src/assets/styles/variables/colors';
+
+.scroll-up-button {
+  width: 54px;
+  height: 54px;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: -70px;
+  right: 16px;
+  z-index: 3;
+  transition: bottom .15s ease-in-out, background .15s ease-in-out;
+  border-radius: 4px;
+
+  &_active {
+    bottom: 16px;
+  }
+
+  &:hover {
+    background: $secondary;
+  }
+
+  &:active {
+    background: $primary-dark;
+  }
+}

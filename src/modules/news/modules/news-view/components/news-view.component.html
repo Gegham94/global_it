@@ -1,0 +1,29 @@
+<div class='news container' *ngIf='news && !isLoading; else loading'>
+  <div class='news__info'>
+    <img class='news__image' [src]='news.main_image' [alt]='news.main_image'>
+    <h2 class='news__name'>{{news.title}}</h2>
+    <h5 class='news__position'>
+      <a [href]='news.source.trim() | safe : "url"' target='_blank'>{{'news.source' | translate}}</a>
+      | {{news.post_date | date : 'MMMM dd, yyyy' : '' : translate.currentLang}}
+    </h5>
+    <article class='news__description' [innerHTML]='news.description'></article>
+  </div>
+  <img class='news__dots' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+  <img class='news__dots news__dots_top-left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+
+  <div class='news__photo-archive'>
+    <app-photo-slider
+      [originalImages]='news.gallery_paths.originals'
+      [thumbImages]='news.gallery_paths.thumbs'
+    ></app-photo-slider>
+    <img class='news__dots news__dots_left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+  </div>
+  <div class='news__video-archive'>
+    <app-video-slider
+      [videoIds]='news.video_paths'
+    ></app-video-slider>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

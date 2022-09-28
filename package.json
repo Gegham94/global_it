@@ -1,0 +1,93 @@
+{
+  "name": "global-it-awards",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "postinstall": "husky install",
+    "dev:ssr": "ng run global-it-awards:serve-ssr",
+    "serve:ssr": "node dist/global-it-awards/server/app.js",
+    "build:ssr": "ng build && ng run global-it-awards:server",
+    "prerender": "ng run global-it-awards:prerender"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.1.0",
+    "@angular/cdk": "^14.2.2",
+    "@angular/common": "^14.1.0",
+    "@angular/compiler": "^14.1.0",
+    "@angular/core": "^14.1.0",
+    "@angular/forms": "^14.1.0",
+    "@angular/platform-browser": "^14.1.0",
+    "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/platform-server": "^14.1.0",
+    "@angular/router": "^14.1.0",
+    "@nguniversal/express-engine": "^14.1.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "express": "^4.15.2",
+    "jquery": "^3.6.0",
+    "ng-gallery": "^7.0.0",
+    "ngx-infinite-scroll": "^14.0.0",
+    "ngx-slick-carousel": "^0.6.0",
+    "ngx-toastr": "^15.0.0",
+    "node-storage-shim": "^2.0.1",
+    "rxjs": "~7.5.0",
+    "slick-carousel": "^1.8.1",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "^14.0.0",
+    "@angular-devkit/build-angular": "^14.1.0",
+    "@angular-eslint/builder": "14.0.2",
+    "@angular-eslint/eslint-plugin": "14.0.2",
+    "@angular-eslint/eslint-plugin-template": "14.0.2",
+    "@angular-eslint/schematics": "14.0.2",
+    "@angular-eslint/template-parser": "14.0.2",
+    "@angular/cli": "~14.1.0",
+    "@angular/compiler-cli": "^14.1.0",
+    "@nguniversal/builders": "^14.1.0",
+    "@types/express": "^4.17.0",
+    "@types/jasmine": "~4.0.0",
+    "@types/jquery": "^3.5.14",
+    "@types/node": "^14.18.25",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jasmine-core": "~4.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "typescript": "~4.7.2",
+    "webpack": "^5.74.0"
+  }
+}

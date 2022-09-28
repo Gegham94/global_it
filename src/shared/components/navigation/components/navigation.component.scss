@@ -1,0 +1,254 @@
+@import "../../../../assets/styles/variables/colors";
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 27px;
+  padding-bottom: 26px;
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0px -10px 20px rgba(0, 54, 110, 0.057595);
+  margin-bottom: 4px;
+
+  @media screen and (max-width: $lg-tablet-max-width) {
+    display: none;
+  }
+
+  &_mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: right .2s ease-in-out;
+    height: 100vh;
+    width: 280px;
+    z-index: 4;
+    padding: 0;
+    overflow-y: auto;
+    border-radius: 0;
+    box-shadow: 1px 0 0 #DEDEDE;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 22px;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: $black;
+    position: relative;
+
+    &_active {
+      color: $primary;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $black;
+      transition: width .3s ease-in-out;
+    }
+
+    &_active::after {
+      background: $primary;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__mobile-toggler {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border-radius: 0 0 0 50%;
+    background: $white;
+    box-shadow: 0 10px 20px 5px rgb(0 54 110 / 10%);
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__background {
+    display: none;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $black;
+    transition: opacity .2s ease-in-out;
+    overflow: hidden;
+
+    &_toggled {
+      opacity: .6;
+      z-index: 2;
+      transition: opacity .2s ease-in-out, z-index .2s ease-in-out;
+    }
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+    color: $black;
+
+    &-keeper {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    & > span {
+      color: $black;
+    }
+
+    &-keeper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 17px;
+      margin-bottom: 57px;
+      flex-grow: 1;
+    }
+  }
+
+  &__social {
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &-keeper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 49px 22px 20px 18px;
+  }
+
+  &__language {
+    height: 32px;
+    width: 42px;
+    border: 1px solid $black;
+    color: $black;
+    font-weight: 700;
+    transition: background .2s ease-in-out, color .2s ease-in-out;
+
+    &_active,
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+      border-right: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    &-keeper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 21px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__search {
+    padding: 8px 41px 8px 56px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: $black;
+    background: $primary-extralight;
+    border-radius: 8px;
+    transition: padding .15s ease-in-out;
+    width: 100%;
+    border: none;
+
+    &::placeholder {
+      color: $gray-7;
+    }
+
+    &-keeper {
+      width: 100%;
+      height: 36px;
+      position: relative;
+      margin-bottom: 22px;
+    }
+
+    &-icon {
+      &-button {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $lg-tablet-max-width) {
+  .navigation {
+    &_mobile,
+    &__mobile-toggler,
+    &__background {
+      display: block;
+    }
+
+    &_mobile {
+      &-toggled {
+        right: 0;
+      }
+    }
+  }
+}

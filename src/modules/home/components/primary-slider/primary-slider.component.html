@@ -1,0 +1,26 @@
+<div class="home-primary">
+  <ngx-slick-carousel
+    class="home-primary__slider"
+    #slider
+  >
+    <div *ngFor='let sliderElement of carouselData' ngxSlickItem class="home-primary__slide">
+      <div class='home-primary__content'>
+        <h2 class='home-primary__content-title'>
+          {{sliderElement.title}}
+        </h2>
+        <article class='home-primary__content-description'>
+          {{sliderElement.description}}
+        </article>
+      </div>
+      <img class='home-primary__image' [src]='sliderElement.photo_path'>
+    </div>
+  </ngx-slick-carousel>
+  <div class="home-primary__slider-dots">
+    <button class="home-primary__slider-arrow home-primary__slider-arrow_back">
+      <img src="../../../../assets/images/icons/arrow-left.svg" alt="Back">
+    </button>
+    <button class="home-primary__slider-arrow home-primary__slider-arrow_next">
+      <img src="../../../../assets/images/icons/arrow-right.svg" alt="Back">
+    </button>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+@import 'src/assets/styles/variables/colors';
+
+.primary-block {
+  background: $primary;
+  border-radius: 0 0 0 100px;
+  max-width: 1440px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  @media screen and (max-width: $md-tablet) {
+    height: auto;
+    border-radius: 0 0 0 26px;
+  }
+
+  ::ng-deep *::selection {
+    background: $white;
+    color: $primary;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    top: 3.8px;
+    width: 900px;
+    height: 670px;
+    object-fit: cover;
+    object-position: 78.37px 0;
+    z-index: -1;
+    pointer-events: none;
+
+    @media screen and (max-width: $lg-tablet-max-width) {
+      top: 45.8px;
+      width: 580px;
+      height: 400px;
+    }
+
+    @media screen and (max-width: $md-tablet) {
+      top: 110.8px;
+    }
+
+    @media screen and (max-width: $md-mobile) {
+      top: 160px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<div class="laureates container" *ngIf='laureates.length > 0; else loading'>
+  <h2 class="laureates__title">Global IT Award {{'navigation-links.laureates' | translate}}</h2>
+  <ngx-slick-carousel
+    class="laureates__slider"
+    #slider
+    [config]='carouselOptions'
+  >
+    <a ngxSlickItem class="laureates__card" *ngFor='let laureate of laureates' [routerLink]='"laureates/" + laureate.slug'>
+      <div class="laureates__card-image-keeper">
+        <img class="laureates__card-image" [src]="laureate.photo_path" alt="Kaspersky">
+        <span class="laureates__card-year">{{laureate.year}}</span>
+      </div>
+      <div class="laureates__card-info">
+        <h6 class="laureates__card-name">{{laureate.name}}</h6>
+        <span class="laureates__card-position">{{laureate.position}}</span>
+        <article class="laureates__card-about" [innerHTML]='laureate.description'></article>
+      </div>
+    </a>
+  </ngx-slick-carousel>
+  <div class="laureates__slider-arrows">
+    <button class="laureates__slider-arrow laureates__slider-arrow_back">
+      <img src="../../../../assets/images/icons/chevron-left.svg" alt="Back">
+    </button>
+    <button class="laureates__slider-arrow laureates__slider-arrow_next">
+      <img src="../../../../assets/images/icons/chevron-right.svg" alt="Back">
+    </button>
+  </div>
+  <div class="laureates__slider-arrows laureates__slider-arrows_mobile">
+    <button class="laureates__slider-arrow laureates__slider-arrow_back">
+      <img src="../../../../assets/images/icons/arrow-left.svg" alt="Back">
+    </button>
+    <button class="laureates__slider-arrow laureates__slider-arrow_next">
+      <img src="../../../../assets/images/icons/arrow-right.svg" alt="Back">
+    </button>
+  </div>
+  <img class="laureates__dots" src="../../../../assets/images/background-elements/dots.svg" alt="Dots">
+</div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

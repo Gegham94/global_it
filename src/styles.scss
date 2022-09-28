@@ -1,0 +1,222 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/fonts/fonts";
+@import "assets/styles/variables/colors";
+@import "assets/styles/reset";
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+
+  // Firefox scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: $primary $primary-extralight;
+
+  // Webkit browsers scrollbar (chrome/edge/opera)
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $primary-extralight;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    transition: background .2s ease-in-out;
+
+    &:hover {
+      background-color: $primary-light;
+    }
+
+    &:active {
+      background-color: $secondary;
+    }
+  }
+
+  &::selection {
+    color: $white;
+    background: $primary;
+  }
+}
+
+p, article {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: $gray-7;
+}
+
+span {
+  font-size: 16px;
+  line-height: 20px;
+  color: $gray-7;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 73px;
+  color: $primary-dark;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 51px;
+  letter-spacing: -1.5px;
+  color: $primary-dark;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 59px;
+  color: $primary-dark;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 0.25px;
+  color: $primary-dark;
+}
+
+h5 {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: $primary;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+a, button {
+  cursor: pointer;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 110px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $sm-desktop) {
+    padding: 0 36px;
+  }
+
+  @media screen and (max-width: $md-mobile) {
+    padding: 0 16px;
+  }
+
+  &_full {
+    width: 100%;
+  }
+}
+
+.cdk-overlay {
+  &-container {
+    position: relative;
+    z-index: 4;
+  }
+
+  &-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.cdk-global-overlay-wrapper {
+  position: fixed;
+  top: 0!important;
+  left: 0!important;
+  width: 100vw;
+  height: 100vh;
+}
+
+lightbox {
+  position: absolute !important;
+  transform: translate(-50%, -50%) !important;
+  left: 50% !important;
+  top: 50% !important;
+  border-radius: 0!important;
+
+  @media screen and (max-width: $lg-mobile) {
+    height: 312px!important;
+  }
+
+  gallery {
+    background: transparent;
+  }
+}
+
+.gallery-backdrop-blur {
+  backdrop-filter: blur(5px);
+}
+
+.g-image-item {
+  background-size: cover!important;
+}
+
+gallery-thumbs {
+  display: none!important;
+}
+
+.g-btn-close {
+  width: 36px!important;
+  height: 36px!important;
+  top: 0!important;
+  right: 0!important;
+  padding: 10px;
+  background: $primary-dark;
+  transition: background .15s ease-in-out;
+
+  &:hover {
+    background: $button;
+  }
+
+  svg {
+    opacity: 1!important;
+    filter: none!important;
+
+    path {
+      fill: white;
+    }
+  }
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+.toast-error {
+  background-color: $primary;
+  background-image: url("./assets/images/icons/toaster-error-icon.svg");
+}
+
+.toast-message {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.slick-list, .slick-track {
+  min-width: 100%;
+}

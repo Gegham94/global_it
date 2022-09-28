@@ -1,0 +1,39 @@
+<div class='stamps-and-postcards'>
+  <app-primary-block>
+    <div class='stamps-and-postcards__title-keeper container'>
+      <h1 class='stamps-and-postcards__title'>
+        {{'stamps-and-postcards.title' | translate}}
+      </h1>
+      <h5 class='stamps-and-postcards__subtitle'>
+        {{'stamps-and-postcards.subtitle' | translate}}
+      </h5>
+      <article class='stamps-and-postcards__article'>
+        <p class='stamps-and-postcards__paragraph'>
+          {{'stamps-and-postcards.article.paragraph-1' | translate}}
+        </p>
+        <p class='stamps-and-postcards__paragraph'>
+          {{'stamps-and-postcards.article.paragraph-2' | translate}}
+        </p>
+        <p class='stamps-and-postcards__paragraph'>
+          {{'stamps-and-postcards.article.paragraph-3' | translate}}
+        </p>
+      </article>
+    </div>
+  </app-primary-block>
+  <div class='stamps-and-postcards__stamp-keeper container'>
+    <div gallerize='stamp-gallery'>
+      <img *ngFor='let stamp of stamps | keyvalue' [class]='"stamps-and-postcards__stamp stamps-and-postcards__stamp_" + stamp.key' [src]='stamp.value' [alt]='"GIT Stamp " + stamp.key'>
+    </div>
+    <img class='stamps-and-postcards__dots stamps-and-postcards__dots_right' src='./assets/images/background-elements/dots.svg' alt=''>
+    <img class='stamps-and-postcards__dots stamps-and-postcards__dots_top-left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+  </div>
+  <div class='stamps-and-postcards__example-list container' gallerize>
+    <img *ngFor='let example of exampleStamps' class='stamps-and-postcards__example' [src]='example' [attr.imageSrc]='example' [attr.thumbSrc]='example' alt='Stamp Example'>
+  </div>
+  <div class='stamps-and-postcards__photo-keeper container'>
+    <img class='stamps-and-postcards__dots stamps-and-postcards__dots_left' src='./assets/images/background-elements/dots.svg' alt='Dots'>
+    <app-photo-slider
+      [originalImages]='archivePhotos'
+    ></app-photo-slider>
+  </div>
+</div>
